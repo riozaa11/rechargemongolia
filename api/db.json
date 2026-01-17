@@ -1,0 +1,45 @@
+{
+  "admins": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "role": "SUPER_ADMIN"
+    }
+  ],
+  "orders": [
+    {
+      "id": "6WUQST",
+      "game": "Free Fire",
+      "product": "530 Diamonds (FF-530)",
+      "player_identifier": "qwwqeqe",
+      "amount_mnt": 16000,
+      "contact": "qweqeq, ewqeq@dad",
+      "note": "Payment=qpay | asdfa",
+      "status": "REJECTED",
+      "created_at": "2026-01-17T20:03:32.424Z"
+    },
+    {
+      "id": "TEIKES",
+      "game": "Roblox",
+      "product": "80 Robux (RBX-80)",
+      "player_identifier": "№№№№",
+      "amount_mnt": 4000,
+      "contact": "№-№, 11@fasf",
+      "note": "Payment=qpay | adasf",
+      "status": "DONE",
+      "created_at": "2026-01-17T21:09:30.345Z"
+    },
+    {
+      "id": "VS5MM8",
+      "game": "Roblox",
+      "product": "80 Robux (RBX-80)",
+      "player_identifier": "dekuj9",
+      "amount_mnt": 4000,
+      "contact": "95564500, kopkl069@gmail.com",
+      "note": "Payment=qpay | joohn hurdn hiigd ugrei",
+      "status": "DONE",
+      "created_at": "2026-01-17T21:13:21.308Z"
+    }
+  ]
+}
