@@ -1,16 +1,18 @@
-cat > next.config.js << 'EOF'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+
   async rewrites() {
-    const API_BASE = process.env.API_BASE_URL || "http://localhost:5050";
     return [
       {
         source: "/api/:path*",
-        destination: `${API_BASE}/api/:path*`,
+        destination:
+          process.env.NEXT_PUBLIC_API_BASE_URL
+            ? `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/:path*`
+            : "http://localhost:5050/api/:path*",
       },
     ];
   },
 };
 
 module.exports = nextConfig;
-EOF
