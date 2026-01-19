@@ -8,6 +8,31 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
+import cors from "cors";
+
+// ✅ Render + localhost аль алийг зөвшөөрнө
+const ALLOWED_ORIGINS = [
+  "https://rechargemongolia.onrender.com",
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "http://localhost:3002",
+];
+
+app.use(
+  cors({
+    origin: function (origin, cb) {
+      // origin байхгүй үед (зарим curl/preview) зөвшөөрнө
+      if (!origin) return cb(null, true);
+      if (ALLOWED_ORIGINS.includes(origin)) return cb(null, true);
+      return cb(new Error("Not allowed by CORS: " + origin));
+    },
+    credentials: true,
+  })
+);
+
+// ✅ OPTIONS preflight (утас / safari дээр чухал)
+app.options("*", cors());
+
 const PORT = process.env.PORT || 5050;
 const JWT_SECRET = process.env.JWT_SECRET || "dev_secret";
 
